@@ -1,0 +1,30 @@
+#!/bin/sh
+saveIFS=$IFS
+IFS="=&"
+params=($QUERY_STRING)
+IFS=$saveIFS
+error=0
+p1="${params[1]}"
+p2="${params[3]}"
+
+if [ "$p1" == "r0" ]; then 
+    devmem 0x43C00018 32 "$p2"
+elif [ "$p1" == "g0" ]; then 
+    devmem 0x43C00014 32 "$p2"
+elif [ "$p1" == "b0" ]; then 
+    devmem 0x43C00010 32 "$p2"
+elif [ "$p1" == "r1" ]; then 
+    devmem 0x43C0000C 32 "$p2"
+elif [ "$p1" == "g1" ]; then 
+    devmem 0x43C00008 32 "$p2"
+elif [ "$p1" == "b1" ]; then 
+    devmem 0x43C00004 32 "$p2"
+elif [ "$p1" == "mod" ]; then 
+    devmem 0x43C00000 32 "$p2"
+else
+    error=1
+fi
+
+echo "Content-Type: application/json"
+echo ""
+printf "{ \"param0\" : \"$p1\", \"param1\" : \"$p2\", \"Error\": \"$error\" }"

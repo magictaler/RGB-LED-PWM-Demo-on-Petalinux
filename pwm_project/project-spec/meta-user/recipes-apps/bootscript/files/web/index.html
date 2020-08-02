@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link href="Stylesheets/magictale.css" rel="stylesheet" type="text/css">
+    <link href="Stylesheets/tabs.css" rel="stylesheet" type="text/css"> 
+    <link href="Stylesheets/slider.css" rel="stylesheet" type="text/css"> 
+    <title>Magictale Electronics</title>
+    <script src="Javascript/jquery-1.12.4.min.js"></script>
+    <script src="Javascript/config.js"></script>
+    <script>
+        $(document).ready(function() {
+            set_led("mod", 128);
+
+            var s0r = document.getElementById("led0_red");
+            var s0g = document.getElementById("led0_green");
+            var s0b = document.getElementById("led0_blue");
+
+            var s1r = document.getElementById("led1_red");
+            var s1g = document.getElementById("led1_green");
+            var s1b = document.getElementById("led1_blue");
+        
+            var led0_caption = document.getElementById("led0_caption");
+            var led1_caption = document.getElementById("led1_caption");
+ 
+            s0r.oninput = function() {
+              led0_caption.style.color = form_rgb_str(s0r.value, s0g.value, s0b.value);
+              set_led("r0", s0r.value);
+            }
+
+            s0g.oninput = function() {
+              led0_caption.style.color = form_rgb_str(s0r.value, s0g.value, s0b.value);
+              set_led("g0", s0g.value);
+            }
+            
+            s0b.oninput = function() {
+              led0_caption.style.color = form_rgb_str(s0r.value, s0g.value, s0b.value);
+              set_led("b0", s0b.value);
+            }
+
+            s1r.oninput = function() {
+              led1_caption.style.color = form_rgb_str(s1r.value, s1g.value, s1b.value);
+              set_led("r1", s1r.value);
+            }
+
+            s1g.oninput = function() {
+              led1_caption.style.color = form_rgb_str(s1r.value, s1g.value, s1b.value);
+              set_led("g1", s1g.value);
+            }
+            
+            s1b.oninput = function() {
+              led1_caption.style.color = form_rgb_str(s1r.value, s1g.value, s1b.value);
+              set_led("b1", s1b.value);
+            }
+       });
+
+    </script>
+</head>
+<body>
+    <iframe src="header.html" height="100" width="100%" scrolling="no" frameborder="0"></iframe>
+    <table width="600" align="center" border="0">
+        <tr>
+            <td colspan="2">
+                <ul class="tab">
+                    <li><a href="#" class="tablinks active">Demo</a></li>
+                </ul>
+                <div id="rgb_pwm_led_demo" class="tabcontent" style="display:block">
+                    <table width="600" height="300" align="center">
+                        <tr height="10">
+                            <td>
+                                <div align="center" id="led0_caption" ><h1>LED 0</h1></div>
+                                <div style="color:red;" >Red:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led0_red">
+                                <div style="color:green;" >Green:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led0_green">
+                                <div style="color:blue;" >Blue:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led0_blue">
+                            </td>
+                            <td width="20">
+                            </td>
+                            <td>
+                                <div align="center" id="led1_caption" ><h1>LED 1</h1></div>
+                                <div style="color:red;" >Red:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led1_red">
+                                <div style="color:green;" >Green:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led1_green">
+                                <div style="color:blue;" >Blue:</div>
+                                <input type="range" min="0" max="48" value="0" class="slider" id="led1_blue">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <iframe src="footer.html" height="25" width="100%" scrolling="no" frameborder="0"></iframe>
+ 
+    <div id="restart_panel" style="display: none; top: 0; right: 0; position: absolute; background-color: red; color: white; padding: 10px 20px">
+        Restarting...
+    </div>
+    
+</body>
+</html>

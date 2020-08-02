@@ -1,0 +1,10 @@
+/include/ "system-conf.dtsi"
+/ {
+    amba: amba {
+
+        &watchdog0 {
+            status = "okay";
+            reset-on-timeout;
+        };
+    };
+2};

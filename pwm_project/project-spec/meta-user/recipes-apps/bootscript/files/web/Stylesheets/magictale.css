@@ -1,0 +1,53 @@
+/* Averta Regular */
+@font-face {
+	font-family: MagictaleAverta;
+	src: url('../A-Calling-Font_D-by-7NTypes.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+    font-family: MagictaleAverta, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16pt;
+    background-color: #BBC2E2;
+}
+
+table.formatted {
+    font-family: MagictaleAverta, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 80%;
+    border-collapse: collapse;
+}
+
+button, select {
+    font-family: MagictaleAverta, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 80%;
+}
+
+table.formatted td, th {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+}
+
+table.formatted tr:nth-child(even){background-color: #f2f2f2;}
+
+table.formatted tr:hover {background-color: #ddd;}
+
+table.formatted th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color: #2980B9;
+    color: white;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+
+div.sh_id {
+    display: inline; 
+    font-size: 10px; 
+    padding-left: 10px;
+    color: #999999;
+}
