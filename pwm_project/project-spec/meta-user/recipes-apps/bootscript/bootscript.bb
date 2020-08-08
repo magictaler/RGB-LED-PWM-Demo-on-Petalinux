@@ -48,20 +48,20 @@ do_install() {
 	install -m 0755 web/cgi-bin/rgb-led-pwm ${D}/home/root/httpd/cgi-bin
 
 	install -d ${D}/home/root/httpd/images
-        install -m 0644 web/images/MagictaleLogo.png ${D}/home/root/httpd/images
+	install -m 0644 web/images/MagictaleLogo.png ${D}/home/root/httpd/images
         
 	install -d ${D}/home/root/httpd/Javascript
-        install -m 0644 web/Javascript/config.js ${D}/home/root/httpd/Javascript
-        install -m 0644 web/Javascript/jquery-1.12.4.min.js ${D}/home/root/httpd/Javascript
+	install -m 0644 web/Javascript/config.js ${D}/home/root/httpd/Javascript
+	install -m 0644 web/Javascript/jquery-1.12.4.min.js ${D}/home/root/httpd/Javascript
 
 	install -d ${D}/home/root/httpd/Stylesheets
-        install -m 0644 web/Stylesheets/magictale.css ${D}/home/root/httpd/Stylesheets
-        install -m 0644 web/Stylesheets/slider.css ${D}/home/root/httpd/Stylesheets
-        install -m 0644 web/Stylesheets/tabs.css ${D}/home/root/httpd/Stylesheets
+	install -m 0644 web/Stylesheets/magictale.css ${D}/home/root/httpd/Stylesheets
+	install -m 0644 web/Stylesheets/slider.css ${D}/home/root/httpd/Stylesheets
+	install -m 0644 web/Stylesheets/tabs.css ${D}/home/root/httpd/Stylesheets
 
 	install -d ${D}/home/root/httpd
-        install -m 0644 web/A-Calling-Font_D-by-7NTypes.woff ${D}/home/root/httpd/
-        install -m 0644 web/footer.html ${D}/home/root/httpd/
-        install -m 0644 web/header.html ${D}/home/root/httpd/
-        install -m 0644 web/index.html ${D}/home/root/httpd/
+	install -m 0644 web/A-Calling-Font_D-by-7NTypes.woff ${D}/home/root/httpd/
+	install -m 0644 web/footer.html ${D}/home/root/httpd/
+	install -m 0644 web/header.html ${D}/home/root/httpd/
+	install -m 0644 web/index.html ${D}/home/root/httpd/
 }
