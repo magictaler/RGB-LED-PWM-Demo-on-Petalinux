@@ -28,21 +28,19 @@ FILES_${PN} =" \
   /home/root/httpd/footer.html \
   /home/root/httpd/header.html \
   /home/root/httpd/index.html \
-  ${bindir}/* \
+  ${sysconfdir}/* \
 "
 
 
 S = "${WORKDIR}"
 
 inherit update-rc.d
-
 INITSCRIPT_NAME = "bootscript"
 INITSCRIPT_PARAMS = "start 99 S ."
 
 do_install() {
-	install -d ${D}/${bindir}
-	install -m 0755 ${S}/bootscript ${D}/${bindir}
-
+	install -d ${D}${sysconfdir}/init.d 
+	install -m 0755 ${S}/bootscript ${D}${sysconfdir}/init.d
 
 	install -d ${D}/home/root/httpd/cgi-bin
 	install -m 0755 web/cgi-bin/rgb-led-pwm ${D}/home/root/httpd/cgi-bin
