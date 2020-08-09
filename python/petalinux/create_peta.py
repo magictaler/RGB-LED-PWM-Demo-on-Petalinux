@@ -37,6 +37,8 @@ def main(options):
     sys.stdout.flush()
     subprocess_cmd(petalinux_build)
 
+    os.chdir("images/linux")
+
     print("Petalinux bootgen")
     sys.stdout.flush()
     subprocess_cmd(petalinux_bootgen)
